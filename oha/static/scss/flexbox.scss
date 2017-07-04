@@ -1,0 +1,99 @@
+@mixin boxHeight($height) {
+  height: $height;
+  line-height: $height;
+}
+@mixin width($width) {
+  width: $width;
+}
+@mixin boxBackgroundColor($top:#05FBFF, $under:#1E00FF) {
+  background: linear-gradient($top, $under);
+}
+
+html, body{
+  font-size: 1.5rem;
+  height: 100%;
+}
+
+h1 {
+  font-size: 1rem;
+  background: rgba(50, 50, 50, 0.8);
+  color: #eeb119;
+  margin: 0;
+}
+
+button {
+  @include width(12rem);
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+  @extend .wrapper;
+  flex-direction: row;
+}
+
+.column {
+  @extend .wrapper;
+  flex-direction: column;
+}
+
+.box {
+  border: 3px solid #2b2b2b;
+  margin: -3px;
+  text-align: center;
+}
+
+.boxHeight--5 {
+  @include boxHeight(3rem);
+}
+
+.boxHeight--10 {
+  @include boxHeight(6rem);
+}
+
+.boxHeight--15 {
+  @include boxHeight(9rem);
+}
+
+.width--5 {
+  @include width(3rem);
+}
+
+.width--10 {
+  @include width(6rem);
+}
+
+.width--15 {
+  @include width(9rem);
+}
+
+.width--20 {
+  @include width(12rem);
+}
+
+.red {
+  @include boxBackgroundColor(#efaed2, #ee391b);
+}
+
+.yellow {
+  @include boxBackgroundColor(#f1f3e2, #f3f102);
+}
+
+.blue {
+  @include boxBackgroundColor(#05FBFF, #1E00FF);
+}
+
+.green {
+  @include boxBackgroundColor(#a1f0e2, #1cf03d);
+}
+
+.orange {
+  @include boxBackgroundColor(#ffc814, #ff7f21);
+}
+
+.margin--small {
+  margin: 0.5rem;
+}

@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../../static/js/vendor/lib/jquery-1.12.4.min.js"></script>
+    <link href="../../static/scss/flexbox.css" rel="stylesheet">
+</head>
+<body>
+<main>
+    <div class="column">
+        <div class="box red width--20 boxHeight--5 "></div>
+        <div class="row">
+            <div class="box yellow width--5 boxHeight--15"></div>
+            <div class="column">
+                <div class="row">
+                    <div class="box blue width--10 boxHeight--10"></div>
+                    <div class="box green width--5 boxHeight--10"></div>
+                </div>
+                <div class="box orange width--15 boxHeight--5"></div>
+            </div>
+        </div>
+        <div class="margin--small"></div>
+        <button class="" id="btnChangeSize">1.1倍!!</button>
+    </div>
+</main>
+</body>
+<script type="text/javascript">
+    $(function() {
+        const sizeMultiple = 1.1;
+        $("#btnChangeSize").on("click",function() {
+            var maxBoxWidth = 0;
+            $(".box").each(function() {
+                maxBoxWidth = maxBoxWidth < $(this).width() * sizeMultiple  ? $(this).width() * sizeMultiple : maxBoxWidth;
+                $(this).height($(this).height() * sizeMultiple);
+                $(this).width($(this).width() * sizeMultiple);
+            });
+            $(this).width(maxBoxWidth);
+        })
+    });
+</script>
+</html>
