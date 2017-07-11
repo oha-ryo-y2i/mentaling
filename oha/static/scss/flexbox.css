@@ -18,6 +18,10 @@ button {
 .row {
   flex-direction: row; }
 
+* {
+  min-height: 0;
+  min-width: 0; }
+
 .column {
   flex-direction: column; }
 
@@ -26,44 +30,44 @@ button {
   margin: -3px;
   text-align: center; }
 
-.boxHeight--5 {
+.boxHeight--1 {
   height: 3rem;
   line-height: 3rem; }
 
-.boxHeight--10 {
+.boxHeight--2 {
   height: 6rem;
   line-height: 6rem; }
 
-.boxHeight--15 {
+.boxHeight--3 {
   height: 9rem;
   line-height: 9rem; }
 
-.width--5 {
+.width--1 {
   width: 3rem; }
 
-.width--10 {
+.width--2 {
   width: 6rem; }
 
-.width--15 {
+.width--3 {
   width: 9rem; }
 
-.width--20 {
+.width--4 {
   width: 12rem; }
 
 .red {
-  background: linear-gradient(#efaed2, #ee391b); }
+  background: linear-gradient(#ef93a9, #ee391b); }
 
 .yellow {
-  background: linear-gradient(#f1f3e2, #f3f102); }
+  background: linear-gradient(#f3edbd, #ebf31f); }
 
 .blue {
-  background: linear-gradient(#05FBFF, #1E00FF); }
+  background: linear-gradient(#0addff, #1E00FF); }
 
 .green {
-  background: linear-gradient(#a1f0e2, #1cf03d); }
+  background: linear-gradient(#b3f0c0, #1cf03d); }
 
 .orange {
-  background: linear-gradient(#ffc814, #ff7f21); }
+  background: linear-gradient(#ffc328, #ff7403); }
 
 .margin--small {
   margin: 0.5rem; }

@@ -34,7 +34,10 @@ button {
   @extend .wrapper;
   flex-direction: row;
 }
-
+* {
+  min-height: 0;
+  min-width: 0;
+}
 .column {
   @extend .wrapper;
   flex-direction: column;
@@ -46,52 +49,52 @@ button {
   text-align: center;
 }
 
-.boxHeight--5 {
+.boxHeight--1 {
   @include boxHeight(3rem);
 }
 
-.boxHeight--10 {
+.boxHeight--2 {
   @include boxHeight(6rem);
 }
 
-.boxHeight--15 {
+.boxHeight--3 {
   @include boxHeight(9rem);
 }
 
-.width--5 {
+.width--1 {
   @include width(3rem);
 }
 
-.width--10 {
+.width--2 {
   @include width(6rem);
 }
 
-.width--15 {
+.width--3 {
   @include width(9rem);
 }
 
-.width--20 {
+.width--4 {
   @include width(12rem);
 }
 
 .red {
-  @include boxBackgroundColor(#efaed2, #ee391b);
+  @include boxBackgroundColor(#ef93a9, #ee391b);
 }
 
 .yellow {
-  @include boxBackgroundColor(#f1f3e2, #f3f102);
+  @include boxBackgroundColor(#f3edbd, #ebf31f);
 }
 
 .blue {
-  @include boxBackgroundColor(#05FBFF, #1E00FF);
+  @include boxBackgroundColor(#0addff, #1E00FF);
 }
 
 .green {
-  @include boxBackgroundColor(#a1f0e2, #1cf03d);
+  @include boxBackgroundColor(#b3f0c0, #1cf03d);
 }
 
 .orange {
-  @include boxBackgroundColor(#ffc814, #ff7f21);
+  @include boxBackgroundColor(#ffc328, #ff7403);
 }
 
 .margin--small {
