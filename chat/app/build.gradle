@@ -1,0 +1,62 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.7.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath('com.google.gms:google-services:3.1.0')
+
+
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+ext {
+	springCloudVersion = 'Dalston.SR3'
+}
+jar {
+	baseName = 'spring-boot-ext-firebase'
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-batch')
+	compile('org.springframework.cloud:spring-cloud-starter-aws')
+	compile('org.springframework.cloud:spring-cloud-starter-aws-jdbc')
+	compile('org.springframework.cloud:spring-cloud-starter-aws-messaging')
+	compile('org.apache.cxf:cxf-spring-boot-starter-jaxrs:3.1.11')
+	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+	compile('org.springframework.boot:spring-boot-starter-data-redis')
+	compile('org.springframework.boot:spring-boot-starter-mail')
+	compile('org.springframework.session:spring-session')
+	compile('org.springframework.boot:spring-boot-starter-social-twitter')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-starter-validation')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-web-services')
+	compile('org.springframework.boot:spring-boot-starter-websocket')
+	compile group: 'com.google.firebase', name: 'firebase-admin', version: '4.0.2'
+    compile group: 'com.google.firebase', name: 'firebase-server-sdk', version: '3.0.3'
+	runtime('mysql:mysql-connector-java')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
