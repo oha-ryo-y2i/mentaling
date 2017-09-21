@@ -1,0 +1,28 @@
+[debug] [2017-09-21T04:22:58.542Z] ----------------------------------------------------------------------
+[debug] [2017-09-21T04:22:58.544Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ryohei_ohashi\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-09-21T04:22:58.544Z] CLI Version:   3.12.0
+[debug] [2017-09-21T04:22:58.544Z] Platform:      win32
+[debug] [2017-09-21T04:22:58.544Z] Node Version:  v6.10.3
+[debug] [2017-09-21T04:22:58.545Z] Time:          Thu Sep 21 2017 13:22:58 GMT+0900 (東京 (標準時))
+[debug] [2017-09-21T04:22:58.545Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-21T04:22:58.556Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-21T04:22:58.556Z] > authorizing via signed-in user
+[debug] [2017-09-21T04:22:58.558Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/javatightchatwebapp  
+ Thu Sep 21 2017 13:22:58 GMT+0900 (東京 (標準時))
+[debug] [2017-09-21T04:22:59.284Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-21T04:22:59.284Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/javatightchatwebapp/tokens  
+ Thu Sep 21 2017 13:22:59 GMT+0900 (東京 (標準時))
+[debug] [2017-09-21T04:22:59.923Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\ryohei_ohashi\Documents\Project\sample\friendlychat-web\web-start'...
+[info] 
+[debug] [2017-09-21T04:22:59.923Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/javatightchatwebapp  
+ Thu Sep 21 2017 13:22:59 GMT+0900 (東京 (標準時))
+[debug] [2017-09-21T04:23:00.688Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-21T04:23:00.688Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/805455322398/clients/_:getWebAppConfig  
+ Thu Sep 21 2017 13:23:00 GMT+0900 (東京 (標準時))
+[debug] [2017-09-21T04:23:01.423Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] +  hosting: Local server: http://localhost:5000
+
