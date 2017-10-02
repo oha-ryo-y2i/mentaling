@@ -50,7 +50,7 @@ FriendlyChat.prototype.loadMessages = function() {
 
 FriendlyChat.prototype.saveMessage = function(e) {
   e.preventDefault();
-  if (this.messageInput.value && this.checkSignedInWithMessage()) {
+  if (this.messageInput.value && !this.checkSignedInWithMessage()) {
     var currentUser = this.auth.currentUser;
     this.messagesRef.push({
       name: currentUser.displayName,
@@ -95,6 +95,15 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
   }
 };
 
+FriendlyChat.prototype.checkSignedInWithMessage = function() {
+  var data = {
+    message: 'You must sign-in first',
+    timeout: 2000
+  };
+  this.signInSnackbar.MaterialSnackbar.showSnackbar(data);
+  return false;
+};
+
 FriendlyChat.prototype.signIn = function() {
   var provider = new firebase.auth.GoogleAuthProvider();
   this.auth.signInWithPopup(provider);
@@ -131,15 +140,6 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
   }
 };
 
-FriendlyChat.prototype.checkSignedInWithMessage = function() {
-  var data = {
-    message: 'You must sign-in first',
-    timeout: 2000
-  };
-  this.signInSnackbar.MaterialSnackbar.showSnackbar(data);
-  return false;
-};
-
 FriendlyChat.prototype.saveMessagingDeviceToken = function() {
 };
 
@@ -157,6 +157,13 @@ FriendlyChat.MESSAGE_TEMPLATE =
       '<div class="message"></div>' +
       '<div class="name"></div>' +
     '</div>';
+    
+FriendlyChat.MESSAGE_TEMPLATE_ME =
+    '<div class="message-container__me">' +
+      '<div class="spacing"><div class="pic"></div></div>' +
+      '<div class="message"></div>' +
+      '<div class="name"></div>' +
+    '</div>';
 
 FriendlyChat.LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif';
 
@@ -164,7 +171,11 @@ FriendlyChat.prototype.displayMessage = function(key, name, text, picUrl, imageU
   var div = document.getElementById(key);
   if (!div) {
     var container = document.createElement('div');
-    container.innerHTML = FriendlyChat.MESSAGE_TEMPLATE;
+    if (this.auth.currentUser.displayName == name) {
+      container.innerHTML = FriendlyChat.MESSAGE_TEMPLATE_ME;
+    } else {
+      container.innerHTML = FriendlyChat.MESSAGE_TEMPLATE;
+    }
     div = container.firstChild;
     div.setAttribute('id', key);
     this.messageList.appendChild(div);

@@ -70,6 +70,16 @@ main, #messages-card {
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
+.message-container__me {
+  display: block;
+  margin-top: 10px;
+  border-top: 1px solid #f3f3f3;
+  padding-top: 10px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  text-align: right;
+  text-align: -moz-right;
+}
 .message-container.visible {
   opacity: 1;
 }
